@@ -1,0 +1,13 @@
+/* App.css */
+.editor-container {
+    position: relative;;
+    width: 100%;
+    border: 1px solid #ccc; /* Add a border for a more defined look */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a 3D effect */
+    background-color: #f5f5f5; /* Background color matching the editor theme */
+}
+
+.editor-container .monaco-editor {
+    border-radius: 4px; /* Ensure the editor matches the container's rounded corners */
+}

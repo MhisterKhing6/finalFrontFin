@@ -1,0 +1,188 @@
+a {
+    text-decoration: none !important;
+}
+
+.popOver {
+    background-color: rgb(251, 255, 248) !important;
+    width: 100vw;
+}
+
+.popHead {
+    font-weight: bold;
+    font-size: 15px;
+
+}
+.service {
+    background-color: #f8f8f8;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .imgScroll {
+    max-width: 150px;
+    height:  8rem;
+    padding: 20px;
+    object-fit: contain;
+  }
+  
+  .imgScroll:last-of-type {
+    padding-left: 0;
+  }
+  
+  .inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 8rem;
+  }
+  
+  .wrapper {
+    position: absolute;
+    display: flex;
+  }
+  
+  .sectionScroll {
+    display: flex;
+    animation: swipe var(--speed) linear infinite backwards;
+  }
+  .animateMe {
+    animation: popUp 2s ease-in-out infinite alternate-reverse;
+  }
+
+ 
+  @keyframes popUp {
+    0%{
+        transform: translateY(-100);
+    }
+    100%{
+        transform: translateY(0);
+    }
+  }
+  @keyframes swipe {
+    0% {
+      transform: translate(0);
+    }
+  
+    100% {
+      transform: translate(-100%);
+    }
+  }
+  
+  .bannerImage {
+    background:  url("./assets/services/banner2.jpg");
+  }
+  .footerBtn {
+    min-height: 50px;
+    width: 150px;
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    border-radius: 10px;
+    transition: all 1.5s;
+  }
+  .footerBtn:hover{
+    background-color: blue;
+  }
+  .container {
+    background-color: inherit !important;
+  }
+
+  .btn-translucent-accent {
+    background-color: rgba(93, 60, 242, .1)
+}
+
+.btn-translucent-success {
+    background-color: rgba(7, 201, 139, .1)
+}
+
+.btn-translucent-info {
+    background-color: rgba(60, 118, 242, .1)
+}
+
+.btn-translucent-warning {
+    background-color: rgba(253, 188, 49, .15)
+}
+
+.btn-translucent-danger {
+    background-color: rgba(242, 60, 73, .1)
+}
+
+.btn-translucent-light {
+    background-color: rgba(255, 255, 255, .04)
+}
+
+.btn-translucent-dark {
+    background-color: rgba(31, 27, 45, .1)
+}
+
+.btn-translucent-primary {
+    color: #3b82f6
+}
+
+.btn-translucent-primary:hover, .btn-translucent-primary:focus, .btn-translucent-primary:active, .btn-translucent-primary.active, .btn-translucent-primary.show {
+    background-color: #3b82f6
+}
+
+.btn-translucent-accent {
+    color: #5d3cf2
+}
+
+.btn-translucent-accent:hover, .btn-translucent-accent:focus, .btn-translucent-accent:active, .btn-translucent-accent.active, .btn-translucent-accent.show {
+    background-color: #5d3cf2
+}
+
+.btn-translucent-success {
+    color: #07c98b
+}
+
+.btn-translucent-success:hover, .btn-translucent-success:focus, .btn-translucent-success:active, .btn-translucent-success.active, .btn-translucent-success.show {
+    background-color: #07c98b
+}
+
+.btn-translucent-info {
+    color: #3c76f2
+}
+
+.btn-translucent-info:hover, .btn-translucent-info:focus, .btn-translucent-info:active, .btn-translucent-info.active, .btn-translucent-info.show {
+    background-color: #3c76f2
+}
+
+.btn-translucent-warning {
+    color: #fdbc31
+}
+
+.btn-translucent-warning:hover, .btn-translucent-warning:focus, .btn-translucent-warning:active, .btn-translucent-warning.active, .btn-translucent-warning.show {
+    background-color: #fdbc31
+}
+
+.btn-translucent-danger {
+    color: #f23c49
+}
+
+.btn-translucent-danger:hover, .btn-translucent-danger:focus, .btn-translucent-danger:active, .btn-translucent-danger.active, .btn-translucent-danger.show {
+    background-color: #f23c49
+}
+
+.btn-translucent-dark {
+    color: #1f1b2d
+}
+
+.btn-translucent-dark:hover, .btn-translucent-dark:focus, .btn-translucent-dark:active, .btn-translucent-dark.active, .btn-translucent-dark.show {
+    background-color: #1f1b2d
+}
+
+[class^=btn-translucent-]:hover, [class^=btn-translucent-]:focus, [class^=btn-translucent-]:active, [class^=btn-translucent-].active, [class^=btn-translucent-].show, [class*=" btn-translucent-"]:hover, [class*=" btn-translucent-"]:focus, [class*=" btn-translucent-"]:active, [class*=" btn-translucent-"].active, [class*=" btn-translucent-"].show {
+    color: #fff
+}
+
+.btn-translucent-light {
+    color: #fff
+}
+
+.btn-translucent-light:hover, .btn-translucent-light:focus, .btn-translucent-light:active, .btn-translucent-light.active {
+    background-color: #fff;
+    color: #3b82f6
+}

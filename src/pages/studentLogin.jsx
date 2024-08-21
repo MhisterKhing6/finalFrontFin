@@ -68,7 +68,7 @@ const LoginStudent = () => {
                 <Row>
 
                 <Col md={8} lg={8}>
-                <Image  src={student} fluid rounded />
+               {/** <Image  width={300} src={student} rounded />  */}
 
                 <Form onSubmit={handleSubmit} className="text-start border-2 parent bg-transparent shadow-lg text-white">
                 <AlertToast show={showError} text={errorMessage} toggleShow={() => setError(false)} />

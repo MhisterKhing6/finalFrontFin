@@ -18,7 +18,7 @@ const AddAssQuestion = ({compiler , assId, show, onHide, addQuestion, newQuestio
     const [examples, setExamples] = useState([])
     
     const [fileS, setFileS] = useState(false)
-    const [editorS, setEditorS] = useState(false)
+    const [editorS, setEditorS] = useState(true)
     //
     const [showInfo, setShowInfo] = useState(false)
     const [infoMessage, setInfoMessage] = useState("")

@@ -6,12 +6,12 @@ import { IoBarChart } from "react-icons/io5";
 import { MdAssignmentAdd } from "react-icons/md";
 import { DashBoardElement } from "./dasboardElement";
 
-const LecturerDashboard = ()=> {
+const LecturerDashboard = ({ass, subs})=> {
     let actions = [{url:"/lecturer/create/assignment", title: "Create Assignment", desc:"Design programming assignments to challenge students, enhance coding skills, and cultivate problem-solving abilities through hands-on practice and real-world scenarios.", "icon": <MdAssignmentAdd style={{fontSize: "3rem"}} />},
                    {url: "/lecturer/view-assignment" , "title": "View Assignments", desc:"View created assignments effortlessly, ensuring clarity, coherence, and alignment with learning objectives for seamless instruction and assessment.", icon: <CiViewBoard style={{fontSize: "3rem"}} /> },
                    {url:"/lecturer/view-assignment", "title": "Edit Assignment", desc: "Effortlessly modify existing assignments, tailoring content, adjusting parameters, and refining instructions to meet evolving educational needs with precision and ease.", icon: <CiEdit style={{fontSize: "3rem"}} />},
-                   {url:"/lecturer/view-assignment", "title": "Student Result", desc: "Easily review student assignment results in various formats, ensuring accessibility and facilitating comprehensive assessment and feedback for effective learning.",icon:<IoBarChart style={{fontSize: "3rem"}} />}]
-    
+                   {url:"/lecturer/student-report", "title": "Student Result", desc: "Easily review student reports on course in various formats, ensuring accessibility and facilitating comprehensive assessment and feedback for effective learning.",icon:<IoBarChart style={{fontSize: "3rem"}} />}]
+    console.log(ass)
     return(
         <>
         <Container fluid >
@@ -37,7 +37,7 @@ const LecturerDashboard = ()=> {
                         <Card.Body className=" px-3 py-1">
                         <p className="card-text fs-sm my-2">Number of Assignments</p>
                             <div className="">
-                            <h3 className='my-2'>600</h3>
+                            <h3 className='my-2'>{ass.total}</h3>
                             </div>
                         </Card.Body>
                     </Card>
@@ -50,7 +50,7 @@ const LecturerDashboard = ()=> {
                         <Card.Body className="mb-0 px-3 py-1">
                         <p className="card-text fs-sm my-2">Number of Assignments Open</p>
                             <div className="m-0">
-                            <h3 className='my-2'>600</h3>
+                            <h3 className='my-2'>{ass.open}</h3>
                             </div>
                         </Card.Body>
                     </Card>
@@ -63,7 +63,7 @@ const LecturerDashboard = ()=> {
                         <Card.Body className="mb-0 px-3 py-1">
                         <p className="card-text fs-sm my-2">Number of Assignments Close</p>
                             <div className="m-0">
-                            <h3 className='my-2'>600</h3>
+                            <h3 className='my-2'>{ass.close}</h3>
                             </div>
                         </Card.Body>
                     </Card>
@@ -71,44 +71,26 @@ const LecturerDashboard = ()=> {
                     
                  </Col>
                 <Col xs={12} md={6} lg={7} xl={8} xxl={9} className="my-5 h-100" >
+                
                  <Card className="bg-body-tertiary p-2 w-100">
                     <Card.Title>Assignment Completed</Card.Title>
                     <Card.Body>
-                        <Card className="my-3">
+                    {subs.map(val => {
+                    return (
+                    
+                    <Card className="my-3" key={val.title}>
                             <Card.Body>
                             <div  className='mb-0'>
-                                <h6 className='mb-0'>Introduction to python</h6>
-                                <div className='fs-xs'>200/400 students submitted</div>
+                                <h6 className='mb-1'>{val.title}</h6>
+                                <div className='fs-xs'>{val.submission}/{val.totalClass} students submitted</div>
                              </div>
                              <div className="progress mt-1 mb-1">
-                             <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{width:'90%'}} aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                             <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{width:`${val.submission * 100 / val.totalClass}%`}} aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>  
                             </Card.Body>
-                        </Card>
-
-                        <Card className="my-3">
-                            <Card.Body>
-                            <div  className='mb-0'>
-                                <h6 className='mb-0'>Introduction to C++</h6>
-                                <div className='fs-xs'>200/400 students submitted</div>
-                             </div>
-                             <div className="progress mt-1 mb-1">
-                             <div className="bg-danger progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{width:'80%'}} aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            </Card.Body>
-                        </Card>
-
-                        <Card className="my-3">
-                            <Card.Body>
-                            <div  className='mb-0'>
-                                <h6 className='mb-0'>Introduction to C++</h6>
-                                <div className='fs-xs'>200/400 students submitted</div>
-                             </div>
-                             <div className="progress mt-1 mb-1">
-                             <div className="bg-success progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{width:'80%'}} aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>  
-                            </Card.Body>
-                        </Card>
+                        </Card>       
+                    )
+                 })}
                         
                     </Card.Body>
                  </Card> 

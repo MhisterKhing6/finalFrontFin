@@ -12,7 +12,7 @@ import { Loading } from "./loading"
 
 
 const AssignmentCreationForm = ({ass}) => {
-    const [fileMode, setFileMode] = useState(ass ? !ass.gitMode : false)
+    const [fileMode, setFileMode] = useState(ass ? !ass.gitMode : true)
     const [loading, setLoading] = useState(false)
     const [submitting, setSubmission] = useState (false)
     const [compilers, setCompilers] = useState([])
@@ -177,7 +177,7 @@ const AssignmentCreationForm = ({ass}) => {
                 //set program id
                 //set loadingClass to false
                 setLoadingClass(true)
-                //set startSpiner to true
+                //set start Spiner to true
                 //get classes for the program
                 let url ="/api/program/classes"
                 let response = await postToBackend(url, {programId: val.target.value})

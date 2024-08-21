@@ -14,7 +14,7 @@ const ViewSubmissionPage = () => {
     const [loading, setLoading] = useState(false)
     const redirect = useNavigate()
     const [loadingDetail, setLoadingDetail] = useState(true)
-    const [submission, setSub] = useState([])
+    const [submission, setSub] = useState({})
     const {assId, status} = useParams()
     const {loadAssignment, setAssignment, assignment,loadDetails, authenticated, setAuthenticated, lecturer, setLecturer} = useContext(LecturerContext)
     useEffect(()=> {
@@ -107,7 +107,7 @@ const ViewSubmissionPage = () => {
                             <td><h5>Name </h5></td>
                             <td><h5>Index </h5></td>
                             <td><h5>Marks </h5></td>
-                            <td><h5>Status </h5></td>
+                            {submission.plagiarism && <td><h5>Plagiarism </h5></td>}
                             <td><h5>Date </h5></td>
                         </thead>
                         <tbody>
@@ -116,7 +116,7 @@ const ViewSubmissionPage = () => {
                                 <td>{item.Student.name}</td>
                                 <td>{item.Student.index}</td>
                                 <td>{item.mark}</td>
-                                <td><Badge bg="success">Submitted</Badge></td>
+                                {submission.plagiarism && <td>{item.plagiarism}</td>}
                                 <td>{formatDate(new Date(item.createdAt))}</td>
                             </tr>)
                             })}

@@ -43,11 +43,12 @@ const  loadDetails = async (setData, lecturer, setLoading, setAuth, redirect) =>
 }
 
 const loadAssignment = async (assignment, setAssignment, setLoading) =>{
-    if(!assignment.assignments) {
+    if(true) {
         //do the loading here
         let url = '/coder/lecturer/assignments'
         let response = await getFromBackend(url, getToken(token.lecturerTokenKey))
         //check if there is error
+        console.log(response)
         if(response.status !== 200)
             {
                 alert(response.data.message)
@@ -100,7 +101,7 @@ const loadAssignment = async (assignment, setAssignment, setLoading) =>{
 
 const LecturerContextProvider = ({children}) => {
     let [lecturer, setLecturer] = useState({})
-    let [assignment, setAssignment] = useState({"open": 0, close:0, futere:0, total:0, assignments:[]})
+    let [assignment, setAssignment] = useState({"open": 0, close:0, future:0, total:0, assignments:[]})
     let [authenticated, setAuthenticated] = useState(getToken(token.lecturerTokenKey)? true : false)
     
 

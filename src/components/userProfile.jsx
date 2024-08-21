@@ -14,11 +14,11 @@ const UserProfile = ({name, profileUrl, type}) => {
     const [modal, showModal] = useState(false)
     const {setAuthenticated} = useContext(LecturerContext)
     return (
-        <Container fluid className="d-flex px-1 w-100 justify-content-end align-items-center h-auto userProfile">
+        <Container fluid className="d-flex px-4 w-100 justify-content-end align-items-center h-auto userProfile">
                 {type==="student" ? <StudentProfile show={modal} close={() => showModal(false)}/> : <LecturerProfile show={modal} close={()=> showModal(false)}/>}
                 <Dropdown className="p-1">
                     <Dropdown.Toggle id="dropdown-basic" className="avatar d-flex justify-content-center align-items-center">
-                        <p className="mt-2 mx-1 lead">{name}</p>
+                        <p  className="mt-2 mx-2 lead">{name}</p>
                         <img src={profileUrl || avatar} style={{width:"50px", height:"50px"}} />
                     </Dropdown.Toggle>
 
